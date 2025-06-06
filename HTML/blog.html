@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Jose Manuel R.</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-slate-900 to-slate-800 text-gray-100 min-h-screen">
+    <!-- NAVBAR (igual que en tu index, pero con el enlace Blog activo) -->
+    <nav id="main-nav"
+        class="bg-slate-900/80 backdrop-blur-md text-white p-4 fixed w-full z-50 top-0 shadow-lg left-0 right-0">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold text-sky-400 hover:text-sky-300 transition-colors">José Manuel
+                R.</a>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            <ul class="hidden md:flex space-x-3 lg:space-x-4 items-center text-sm">
+                <li><a href="index.html" class="px-2 py-1 hover:text-sky-300 tc">Home</a></li>
+                <li><a href="index.html#services" class="px-2 py-1 hover:text-sky-300 tc">Services</a></li>
+                <li><a href="blog.html"
+                        class="px-2 py-1 text-sky-400 font-bold underline underline-offset-4 tc">Blog</a>
+                </li>
+                <li><a href="index.html#about" class="px-2 py-1 hover:text-sky-300 tc">About</a></li>
+                <li><a href="index.html#certificates" class="px-2 py-1 hover:text-sky-300 tc">Certificates</a></li>
+                <li><a href="index.html#portfolio" class="px-2 py-1 hover:text-sky-300 tc">Portfolio</a></li>
+                <li><a href="index.html#process" class="px-2 py-1 hover:text-sky-300 tc">Process</a></li>
+                <li><a href="index.html#contact"
+                        class="bg-sky-500 hover:bg-sky-600 px-4 py-2 rounded-md text-xs font-semibold tc cta-button">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden mt-3">
+            <ul class="flex flex-col space-y-2">
+                <li><a href="index.html" class="block py-2 px-3 hover:bg-slate-700 rounded tc text-sm">Home</a></li>
+                <li><a href="index.html#services"
+                        class="block py-2 px-3 hover:bg-slate-700 rounded tc text-sm">Services</a>
+                </li>
+                <li><a href="blog.html"
+                        class="block py-2 px-3 bg-sky-700/30 rounded tc text-sky-400 font-bold text-sm">Blog</a>
+                </li>
+                <li><a href="index.html#about" class="block py-2 px-3 hover:bg-slate-700 rounded tc text-sm">About</a>
+                </li>
+                <li><a href="index.html#certificates"
+                        class="block py-2 px-3 hover:bg-slate-700 rounded tc text-sm">Certificates</a>
+                </li>
+                <li><a href="index.html#portfolio"
+                        class="block py-2 px-3 hover:bg-slate-700 rounded tc text-sm">Portfolio</a>
+                </li>
+                <li><a href="index.html#process"
+                        class="block py-2 px-3 hover:bg-slate-700 rounded tc text-sm">Process</a>
+                </li>
+                <li><a href="index.html#contact"
+                        class="block py-2 mt-1 bg-sky-500 hover:bg-sky-600 rounded font-semibold tc text-center text-sm">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HEADER MEJORADO -->
+    <header class="container mx-auto px-4 pt-32 pb-12">
+        <div class="flex flex-col md:flex-row items-center md:items-end gap-8">
+            <div class="flex-1 text-left">
+                <h1
+                    class="text-4xl sm:text-5xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-teal-300 mb-4 flex flex-row items-center h-20 sm:h-24">
+                    <span id="blog-rotator-1"
+                        class="inline-block min-w-[110px] sm:min-w-[160px] text-white transition-all duration-500 font-extrabold text-left"></span>
+                    <span class="mx-2"></span>
+                    <span id="blog-rotator-2"
+                        class="inline-block min-w-[110px] sm:min-w-[160px] text-white transition-all duration-500 font-extrabold text-left"></span>
+                    <span class="mx-2"></span>
+                    <span id="blog-rotator-3"
+                        class="inline-block min-w-[110px] sm:min-w-[160px] text-white transition-all duration-500 font-extrabold text-left"></span>
+                </h1>
+                <p class="text-slate-400 text-lg sm:text-xl mb-4 max-w-2xl">
+                    Explore articles on <span class="font-semibold text-sky-300">SEO</span>, <span
+                        class="font-semibold text-sky-300">Google Ads</span>, <span
+                        class="font-semibold text-teal-300">WordPress</span>, <span
+                        class="font-semibold text-cyan-300">Python</span> and much more. Find inspiration, learn new
+                    strategies, and stay up to date with the latest in digital marketing and web technology.
+                </p>
+            </div>
+            <div class="flex-shrink-0 hidden md:block">
+                <img src="../assets/image/tu-imagen.jpg" alt="Blog Hero"
+                    class="rounded-2xl shadow-lg w-56 h-72 object-cover border-4 border-sky-500/30 bg-slate-700/30">
+            </div>
+        </div>
+    </header>
+    <main class="container mx-auto px-4 pb-16">
+        <h3 class="text-2xl sm:text-3xl font-bold text-center text-sky-300 mb-10">Latest Blog Posts</h3>
+        <div class="masonry">
+            <!-- Blog Card 1 -->
+            <div class="masonry-item bg-slate-800/80 rounded-xl border border-slate-700 shadow-lg overflow-hidden">
+                <a href="../articulos_de_blog/blog1.html">
+                    <img src="../assets/image/tu-imagen.jpg" alt="SEO Trends" class="blog-card-img">
+                </a>
+                <div class="p-5 flex flex-col">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs font-bold text-sky-400">Digital Marketing</span>
+                        <span class="text-xs font-bold text-sky-400">2025-06-01</span>
+                    </div>
+                    <a href="../articulos_de_blog/blog1.html">
+                        <h4 class="text-lg font-semibold text-sky-300 mb-1 hover:underline">5 SEO Trends You Can't
+                            Ignore in 2025
+                        </h4>
+                    </a>
+                    <p class="text-slate-300 mb-4 flex-1">Stay ahead of the competition with these must-know SEO
+                        strategies for the coming year.
+                    </p>
+                    <a href="../articulos_de_blog/blog1.html"
+                        class="inline-flex items-center text-sky-400 hover:text-sky-300 font-semibold mb-2">
+                        Read me <span class="ml-1">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Blog Card 2 -->
+            <div class="masonry-item bg-slate-800/80 rounded-xl border border-slate-700 shadow-lg overflow-hidden">
+                <a href="../articulos_de_blog/blog2.html">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80"
+                        alt="WordPress Security" class="blog-card-img">
+                </a>
+                <div class="p-5 flex flex-col">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs font-bold text-teal-400">WordPress</span>
+                        <span class="text-xs font-bold text-teal-400">2025-05-15</span>
+                    </div>
+                    <a href="../articulos_de_blog/blog2.html">
+                        <h4 class="text-lg font-semibold text-teal-300 mb-1 hover:underline">How to Secure Your
+                            WordPress Site in 2025
+                        </h4>
+                    </a>
+                    <p class="text-slate-300 mb-4 flex-1">Essential tips and plugins to keep your WordPress website safe
+                        from hackers and malware.
+                    </p>
+                    <a href="../articulos_de_blog/blog2.html"
+                        class="inline-flex items-center text-teal-400 hover:text-teal-300 font-semibold mb-2">
+                        Read me <span class="ml-1">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Blog Card 3 -->
+            <div class="masonry-item bg-slate-800/80 rounded-xl border border-slate-700 shadow-lg overflow-hidden">
+                <a href="../articulos_de_blog/blog3.html">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80"
+                        alt="Python Automation" class="blog-card-img">
+                </a>
+                <div class="p-5 flex flex-col">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs font-bold text-cyan-400">Python</span>
+                        <span class="text-xs font-bold text-cyan-400">2025-04-20</span>
+                    </div>
+                    <a href="../articulos_de_blog/blog3.html">
+                        <h4 class="text-lg font-semibold text-cyan-300 mb-1 hover:underline">Automate Your Marketing
+                            with Python
+                        </h4>
+                    </a>
+                    <p class="text-slate-300 mb-4 flex-1">Discover how Python scripts can save you time and boost your
+                        marketing efficiency.
+                    </p>
+                    <a href="../articulos_de_blog/blog3.html"
+                        class="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-semibold mb-2">
+                        Read me <span class="ml-1">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Blog Card 4 -->
+            <div class="masonry-item bg-slate-800/80 rounded-xl border border-slate-700 shadow-lg overflow-hidden">
+                <a href="../articulos_de_blog/blog4.html">
+                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80"
+                        alt="API Integrations" class="blog-card-img">
+                </a>
+                <div class="p-5 flex flex-col">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs font-bold text-cyan-400">Python</span>
+                        <span class="text-xs font-bold text-cyan-400">2025-03-10</span>
+                    </div>
+                    <a href="../articulos_de_blog/blog4.html">
+                        <h4 class="text-lg font-semibold text-cyan-300 mb-1 hover:underline">Integrating APIs with
+                            Python for Marketers
+                        </h4>
+                    </a>
+                    <p class="text-slate-300 mb-4 flex-1">A beginner's guide to connecting marketing tools and
+                        automating workflows with Python.
+                    </p>
+                    <a href="../articulos_de_blog/blog4.html"
+                        class="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-semibold mb-2">
+                        Read me <span class="ml-1">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Agrega más tarjetas aquí -->
+        </div>
+    </main>
+    <script>
+        // Navigation Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+            const navLinks = mobileMenu.querySelectorAll('a');
+            navLinks.forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); }); });
+        }
+
+        // 27 words, 3 per group, all in English, "SEO", "APIs", "Success" in the third group
+        const blogWords1 = [
+            "Creativity", "Trends", "Automation",
+            "Innovation", "Strategies", "Analytics",
+            "Content", "Visibility", "Growth"
+        ];
+        const blogWords2 = [
+            "WordPress", "Python", "Advertising",
+            "Optimization", "Development", "Learning",
+            "Solutions", "Tools", "Impact"
+        ];
+        const blogWords3 = [
+            "Inspiration", "Google Ads", "SEO",
+            "Meta Ads", "Results", "APIs",
+            "Tutorials", "Cases", "Success"
+        ];
+
+        let idx1 = 0, idx2 = 0, idx3 = 0;
+        const rotator1 = document.getElementById('blog-rotator-1');
+        const rotator2 = document.getElementById('blog-rotator-2');
+        const rotator3 = document.getElementById('blog-rotator-3');
+
+        function animateWord(rotator, word, direction) {
+            rotator.style.opacity = 0;
+            rotator.style.transform = direction === "up" ? "translateY(20px)" : "translateY(-20px)";
+            setTimeout(() => {
+                rotator.textContent = word;
+                rotator.style.opacity = 1;
+                rotator.style.transform = "translateY(0)";
+            }, 300);
+        }
+
+        function nextBlogWords() {
+            idx1 = (idx1 + 1) % blogWords1.length;
+            idx2 = (idx2 + 1) % blogWords2.length;
+            idx3 = (idx3 + 1) % blogWords3.length;
+            animateWord(rotator1, blogWords1[idx1], "up");
+            animateWord(rotator2, blogWords2[idx2], "down");
+            animateWord(rotator3, blogWords3[idx3], "up");
+        }
+
+        // Initialize with the first word of each group
+        if (rotator1 && rotator2 && rotator3) {
+            rotator1.textContent = blogWords1[0];
+            rotator2.textContent = blogWords2[0];
+            rotator3.textContent = blogWords3[0];
+            setInterval(nextBlogWords, 3000); // Change every 3 seconds
+        }
+    </script>
+</body>
+
+</html>

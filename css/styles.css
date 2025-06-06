@@ -1,0 +1,144 @@
+/* Masonry/Pinterest-style grid for desktop */
+.masonry {
+    column-count: 4;
+    column-gap: 2rem;
+}
+@media (max-width: 1280px) {
+    .masonry { column-count: 3; }
+}
+@media (max-width: 1024px) {
+    .masonry { column-count: 2; }
+}
+@media (max-width: 640px) {
+    .masonry { column-count: 1; }
+}
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 2rem;
+    display: block;
+    min-height: 320px;
+    max-width: 100%;
+}
+.blog-card-img {
+    aspect-ratio: 9/12;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+    max-height: 320px;
+}
+.masonry-item:nth-child(4n+1) .blog-card-img { max-height: 320px; }
+.masonry-item:nth-child(4n+2) .blog-card-img { max-height: 260px; }
+.masonry-item:nth-child(4n+3) .blog-card-img { max-height: 200px; }
+.masonry-item:nth-child(4n+4) .blog-card-img { max-height: 380px; }
+@media (max-width: 640px) {
+    #blog-rotator-1,
+    #blog-rotator-2,
+    #blog-rotator-3 {
+        font-size: 1.25rem !important;
+    }
+}
+
+/* Blog slider styles */
+.blog-slider {
+    overflow-x: hidden; /* Oculta la barra de scroll */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1rem;
+    position: relative;
+}
+.blog-track {
+    display: flex;
+    gap: 2rem;
+    min-width: 100%;
+    transition: transform 0.7s cubic-bezier(.4,0,.2,1);
+    will-change: transform;
+}
+.blog-card {
+    background: rgba(30,41,59,0.8);
+    border-radius: 1rem;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.12);
+    min-width: 320px;
+    max-width: 340px;
+    flex: 0 0 320px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+}
+.blog-image {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+@media (max-width: 640px) {
+    .blog-card {
+        min-width: 90vw;
+        max-width: 95vw;
+    }
+}
+
+/* Certificados slider styles */
+.certificate-slider {
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1rem;
+    position: relative;
+}
+.certificate-track {
+    display: flex;
+    gap: 1.5rem;
+    min-width: 100%;
+    transition: transform 0.7s cubic-bezier(.4,0,.2,1);
+    will-change: transform;
+}
+.certificate-card {
+    background: rgba(30,41,59,0.8);
+    border-radius: 1rem;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.12);
+    min-width: 220px;
+    max-width: 240px;
+    flex: 0 0 220px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-snap-align: start;
+    padding: 1.5rem;
+}
+.certificate-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    background: #fff;
+    border-radius: 0.5rem;
+}
+@media (max-width: 640px) {
+    .certificate-card {
+        min-width: 80vw;
+        max-width: 90vw;
+    }
+}
+
+/* Bounce infinite on hover for social icons */
+@keyframes bounce-infinite {
+    0%   { transform: translateY(0); }
+    20%  { transform: translateY(-12px) scale(1.08);}
+    40%  { transform: translateY(0) scale(1);}
+    60%  { transform: translateY(-8px) scale(1.05);}
+    80%  { transform: translateY(0) scale(1);}
+    100% { transform: translateY(0);}
+}
+
+.social-bounce {
+    transition: background 0.2s;
+}
+.social-bounce:hover, .social-bounce:focus {
+    animation: bounce-infinite 0.8s linear infinite;
+}
