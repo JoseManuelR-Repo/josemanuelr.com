@@ -1,73 +1,73 @@
 // Navigation Menu Toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenuButton && mobileMenu) {
-            mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
-            const navLinks = mobileMenu.querySelectorAll('a');
-            navLinks.forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); }); });
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+    const navLinks = mobileMenu.querySelectorAll('a');
+    navLinks.forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); }); });
+}
+
+// Interactive Process Section Logic
+const processContainer = document.getElementById('interactive-process-container');
+if (processContainer) {
+    const processNodes = processContainer.querySelectorAll('.process-node');
+    let currentNodeId = 'process-node-start';
+
+    function showProcessNode(nodeIdToShow) {
+        const targetNode = document.getElementById(nodeIdToShow);
+        if (!targetNode) {
+            console.error(`Process node with ID "${nodeIdToShow}" not found.`);
+            return;
         }
 
-        // Interactive Process Section Logic
-        const processContainer = document.getElementById('interactive-process-container');
-        if (processContainer) {
-            const processNodes = processContainer.querySelectorAll('.process-node');
-            let currentNodeId = 'process-node-start';
-
-            function showProcessNode(nodeIdToShow) {
-                const targetNode = document.getElementById(nodeIdToShow);
-                if (!targetNode) {
-                    console.error(`Process node with ID "${nodeIdToShow}" not found.`);
-                    return;
-                }
-
-                processNodes.forEach(node => {
-                    if (node.id === nodeIdToShow) {
-                        node.classList.remove('hidden', 'absolute', 'pointer-events-none', 'opacity-0');
-                        void node.offsetWidth;
-                        node.classList.add('opacity-100');
-                    } else {
-                        node.classList.remove('opacity-100');
-                        node.classList.add('opacity-0', 'pointer-events-none');
-                        setTimeout(() => {
-                            if (node.id !== nodeIdToShow) {
-                                node.classList.add('hidden', 'absolute');
-                            }
-                        }, 300);
-                    }
-                });
-
-                currentNodeId = nodeIdToShow;
-
+        processNodes.forEach(node => {
+            if (node.id === nodeIdToShow) {
+                node.classList.remove('hidden', 'absolute', 'pointer-events-none', 'opacity-0');
+                void node.offsetWidth;
+                node.classList.add('opacity-100');
+            } else {
+                node.classList.remove('opacity-100');
+                node.classList.add('opacity-0', 'pointer-events-none');
                 setTimeout(() => {
-                    const activeNode = document.getElementById(nodeIdToShow);
-                    if (activeNode) {
-                        activeNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    if (node.id !== nodeIdToShow) {
+                        node.classList.add('hidden', 'absolute');
                     }
-                }, 50);
+                }, 300);
             }
+        });
 
-            processNodes.forEach(node => {
-                const interactiveElements = node.querySelectorAll('a[data-target-node]');
-                interactiveElements.forEach(element => {
-                    element.addEventListener('click', (event) => {
-                        event.preventDefault();
-                        const targetNodeId = element.dataset.targetNode;
-                        showProcessNode(targetNodeId);
-                    });
-                });
-            });
+        currentNodeId = nodeIdToShow;
 
-            processNodes.forEach(node => {
-                if (node.id === 'process-node-start') {
-                    node.classList.remove('hidden', 'absolute', 'pointer-events-none', 'opacity-0');
-                    node.classList.add('opacity-100');
-                } else {
-                    node.classList.add('hidden', 'absolute', 'pointer-events-none', 'opacity-0');
-                }
+        setTimeout(() => {
+            const activeNode = document.getElementById(nodeIdToShow);
+            if (activeNode) {
+                activeNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }, 50);
+    }
+
+    processNodes.forEach(node => {
+        const interactiveElements = node.querySelectorAll('a[data-target-node]');
+        interactiveElements.forEach(element => {
+            element.addEventListener('click', (event) => {
+                event.preventDefault();
+                const targetNodeId = element.dataset.targetNode;
+                showProcessNode(targetNodeId);
             });
+        });
+    });
+
+    processNodes.forEach(node => {
+        if (node.id === 'process-node-start') {
+            node.classList.remove('hidden', 'absolute', 'pointer-events-none', 'opacity-0');
+            node.classList.add('opacity-100');
+        } else {
+            node.classList.add('hidden', 'absolute', 'pointer-events-none', 'opacity-0');
         }
+    });
+}
 
-        // Blog slider auto infinite slideshow
+// Blog slider auto infinite slideshow
 document.addEventListener('DOMContentLoaded', function () {
     const slider = document.querySelector('.blog-slider');
     const track = document.querySelector('.blog-track');
