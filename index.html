@@ -37,6 +37,12 @@
                 <li><a href="/#certificates" class="px-2 py-1 hover:text-sky-300 tc">Certificates</a></li>
                 <li><a href="/#portfolio" class="px-2 py-1 hover:text-sky-300 tc">Portfolio</a></li>
                 <li><a href="/#process" class="px-2 py-1 hover:text-sky-300 tc">Process</a></li>
+                <li>
+                    <button onclick="document.getElementById('proposal-access-modal').classList.remove('hidden')"
+                        class="px-2 py-1 bg-indigo-500 hover:bg-indigo-600 rounded text-white font-semibold tc">
+                        Got a proposal?
+                    </button>
+                </li>
                 <li><a href="/#contact"
                         class="bg-sky-500 hover:bg-sky-600 px-4 py-2 rounded-md text-xs font-semibold tc cta-button">Contact</a>
                 </li>
@@ -498,6 +504,38 @@
             });
         </script>
     </section>
+
+    <!-- Modal to access proposals -->
+    <div id="proposal-access-modal" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl p-8 max-w-xs w-full text-center shadow-lg">
+            <h2 class="text-xl font-bold mb-4 text-slate-800">Access your proposal</h2>
+            <input id="proposal-code-input" type="text" placeholder="Enter your code"
+                class="w-full mb-4 px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+            <button onclick="checkProposalCode()"
+                class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded font-semibold w-full mb-2">
+                View proposal
+            </button>
+            <button onclick="document.getElementById('proposal-access-modal').classList.add('hidden')"
+                class="text-slate-500 hover:text-slate-700 text-sm mt-2">Cancel</button>
+            <p id="proposal-error" class="text-red-500 text-sm mt-2 hidden">Incorrect code.</p>
+        </div>
+    </div>
+
+    <script>
+        function checkProposalCode() {
+            const code = document.getElementById('proposal-code-input').value.trim().toLowerCase();
+            // Puedes agregar más códigos aquí
+            const proposals = {
+                "diaz2025": "diaz_cleaning_services_propuesta.html",
+                "limpiezafeliz": "diaz_cleaning_services_propuesta.html"
+            };
+            if (proposals[code]) {
+                window.location.href = proposals[code];
+            } else {
+                document.getElementById('proposal-error').classList.remove('hidden');
+            }
+        }
+    </script>
 
     <footer class="text-center py-8 text-slate-500 border-t border-slate-700 mt-12">
         <div class="flex justify-center gap-6 mb-4">

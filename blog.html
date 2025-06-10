@@ -198,6 +198,23 @@
             <!-- Agrega más tarjetas aquí -->
         </div>
     </main>
+
+    <!-- Modal para acceder a propuestas -->
+    <div id="proposal-access-modal" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl p-8 max-w-xs w-full text-center shadow-lg">
+            <h2 class="text-xl font-bold mb-4 text-slate-800">Accede a tu propuesta</h2>
+            <input id="proposal-code-input" type="text" placeholder="Ingresa tu código"
+                class="w-full mb-4 px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+            <button onclick="checkProposalCode()"
+                class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded font-semibold w-full mb-2">
+                Ver propuesta
+            </button>
+            <button onclick="document.getElementById('proposal-access-modal').classList.add('hidden')"
+                class="text-slate-500 hover:text-slate-700 text-sm mt-2">Cancelar</button>
+            <p id="proposal-error" class="text-red-500 text-sm mt-2 hidden">Código incorrecto.</p>
+        </div>
+    </div>
+
     <script>
         // Navigation Menu Toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -255,6 +272,20 @@
             rotator2.textContent = blogWords2[0];
             rotator3.textContent = blogWords3[0];
             setInterval(nextBlogWords, 3000); // Change every 3 seconds
+        }
+
+        function checkProposalCode() {
+            const code = document.getElementById('proposal-code-input').value.trim().toLowerCase();
+            // Puedes agregar más códigos aquí
+            const proposals = {
+                "diaz2025": "diaz_cleaning_services_propuesta.html",
+                "limpiezafeliz": "diaz_cleaning_services_propuesta.html"
+            };
+            if (proposals[code]) {
+                window.location.href = proposals[code];
+            } else {
+                document.getElementById('proposal-error').classList.remove('hidden');
+            }
         }
     </script>
 </body>
