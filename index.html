@@ -61,6 +61,12 @@
                 </li>
                 <li><a href="/#process" class="block py-2 px-3 hover:bg-slate-700 rounded tc text-sm">Process</a>
                 </li>
+                <li>
+                    <button onclick="document.getElementById('proposal-access-modal').classList.remove('hidden')"
+                        class="block w-full py-2 px-3 bg-indigo-500 hover:bg-indigo-600 rounded text-white font-semibold text-sm text-center">
+                        Got a proposal?
+                    </button>
+                </li>
                 <li><a href="/#contact"
                         class="block py-2 mt-1 bg-sky-500 hover:bg-sky-600 rounded font-semibold tc text-center text-sm">Contact</a>
                 </li>
@@ -78,16 +84,30 @@
             </span>
         </h1>
         <!-- Foto de perfil debajo del título -->
-        <div class="flex justify-center mb-4">
-            <img src="assets/image/foto_de_perfil_cuadrada.png" alt="Jose Manuel R."
-                class="object-cover shadow-lg border-2 border-sky-500/50 w-40 aspect-[4/5] rounded-lg mx-auto">
+        <!-- Contenedor principal con alineación vertical centrada -->
+        <div class="flex flex-col md:flex-row items-center justify-center gap-10 mb-4">
+            <!-- Imagen -->
+            <div class="flex-shrink-0">
+                <img src="assets/image/foto_de_perfil_cuadrada.png" alt="Jose Manuel R."
+                    class="object-cover shadow-lg border-4 border-sky-500/50 w-60 h-80 rounded-xl">
+            </div>
+
+            <!-- Texto alineado al centro de la imagen -->
+            <div class="flex justify-center flex-col md:text-left text-center max-w-xl">
+                <p class="text-slate-300 mb-6 text-lg md:text-xl leading-relaxed">
+                    I deliver measurable growth by transforming business objectives into integrated digital solutions.
+                    My approach combines strategic
+                    <span class="font-bold text-sky-300">Digital Marketing</span>
+                    with powerful
+                    <span class="font-bold text-teal-300">Back-end Development in Python</span>
+                    and insightful
+                    <span class="font-bold text-cyan-300">Data analysis</span>,
+                    creating a complete ecosystem that not only reaches your audience but also optimizes for performance
+                    and ROI.
+                </p>
+            </div>
         </div>
-        <p class="text-slate-300 max-w-3xl mx-auto mb-6">
-            I accelerate online business growth through data-driven strategies, creative content, and high-performance
-            web solutions.
-            My core expertise in <span class="font-bold text-white">Digital Marketing, Website Development, and Python
-                Programming</span> enables me to craft and execute strategies that will elevate your brand.
-        </p>
+
         <a href="#contact"
             class="cta-button inline-block bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg text-lg">Open
             to Work</a>
@@ -510,7 +530,7 @@
         <div class="bg-white rounded-xl p-8 max-w-xs w-full text-center shadow-lg">
             <h2 class="text-xl font-bold mb-4 text-slate-800">Access your proposal</h2>
             <input id="proposal-code-input" type="text" placeholder="Enter your code"
-                class="w-full mb-4 px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+                class="w-full mb-4 px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-400 text-slate-800" />
             <button onclick="checkProposalCode()"
                 class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded font-semibold w-full mb-2">
                 View proposal
