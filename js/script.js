@@ -188,3 +188,87 @@ document.addEventListener('DOMContentLoaded', function () {
     // Inicializa posición
     slideTo(0, false);
 });
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Modelo de Datos de Precios ---
+            const pricingData = {
+                quantity: {
+                    50: 83.46,
+                    100: 87.74,
+                    250: 95.22,
+                    500: 97.36,
+                    1000: 109.13,
+                    1500: 122.50,
+                    2000: 130.53,
+                    2500: 132.13,
+                    5000: 202.97
+                },
+                paper: {
+                    standard: 0, // El precio base ya está en la cantidad
+                    premium: 15.00, // Costo adicional por papel premium
+                },
+                extras: {
+                    rounded: 10.00, // Costo adicional por esquinas redondeadas
+                }
+            };
+
+            // --- Estado de la Selección del Usuario ---
+            let userSelection = {
+                quantity: 250, // Valor inicial
+                paper: 'standard', // Valor inicial
+                cornersRounded: false,
+            };
+
+            // --- Elementos del DOM ---
+            const quantityOptions = document.getElementById('quantity-options');
+            const paperOptions = document.getElementById('paper-options');
+            const cornersRoundedCheckbox = document.getElementById('corners-rounded');
+            const summaryList = document.getElementById('summary-list');
+            const totalPriceEl = document.getElementById('total-price');
+
+            // --- Funciones ---
+            function calculateTotal() {
+                let total = 0;
+                total += pricingData.quantity[userSelection.quantity];
+                total += pricingData.paper[userSelection.paper];
+                if (userSelection.cornersRounded) {
+                    total += pricingData.extras.rounded;
+                }
+                updateUI(total);
+            }
+
+            function updateUI(total) {
+                totalPriceEl.textContent = `$${total.toFixed(2)}`;
+                summaryList.innerHTML = `
+                    <div class="flex justify-between"><span>Quantity:</span> <strong>${userSelection.quantity}</strong></div>
+                    <div class="flex justify-between"><span>Paper:</span> <strong class="capitalize">${userSelection.paper} (14-pt)</strong></div>
+                    <div class="flex justify-between"><span>Rounded Corners:</span> <strong>${userSelection.cornersRounded ? 'Yes' : 'No'}</strong></div>
+                `;
+            }
+
+            function handleOptionClick(container, key, event) {
+                const button = event.target.closest('button');
+                if (!button) return;
+
+                userSelection[key] = isNaN(button.dataset.value) ? button.dataset.value : parseInt(button.dataset.value);
+                
+                container.querySelectorAll('button').forEach(btn => btn.classList.remove('selected'));
+                button.classList.add('selected');
+
+                calculateTotal();
+            }
+
+            // --- Event Listeners ---
+            quantityOptions.addEventListener('click', (e) => handleOptionClick(quantityOptions, 'quantity', e));
+            paperOptions.addEventListener('click', (e) => handleOptionClick(paperOptions, 'paper', e));
+            
+            cornersRoundedCheckbox.addEventListener('change', (e) => {
+                userSelection.cornersRounded = e.target.checked;
+                calculateTotal();
+            });
+
+            // --- Inicialización ---
+            calculateTotal();
+        });
+   

@@ -194,6 +194,129 @@
         </div>
     </section>
 
+    <div class="container mx-auto px-4 py-12">
+        <header class="text-center mb-10">
+            <h1
+                class="text-3xl sm:text-4xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-300">
+                Print Marketing Materials
+            </h1>
+            <p class="mt-3 text-lg text-slate-400 max-w-2xl mx-auto">
+                Instant price estimator for high-quality business cards. Prices include design and shipping.
+            </p>
+        </header>
+
+        <main class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- Columna de Opciones -->
+            <div class="lg:col-span-2 space-y-8">
+
+                <!-- 1. Quantity -->
+                <div>
+                    <h2 class="text-2xl font-semibold text-sky-300 mb-4">1. Choose Quantity</h2>
+                    <div id="quantity-options" class="grid grid-cols-3 sm:grid-cols-5 gap-3">
+                        <button data-value="50"
+                            class="option-card bg-slate-800 p-3 rounded-lg border-2 border-slate-700 text-center">
+                            <span class="block text-xl font-bold">50</span>
+                        </button>
+                        <button data-value="100"
+                            class="option-card bg-slate-800 p-3 rounded-lg border-2 border-slate-700 text-center">
+                            <span class="block text-xl font-bold">100</span>
+                        </button>
+                        <button data-value="250"
+                            class="option-card bg-slate-800 p-3 rounded-lg border-2 border-slate-700 text-center selected">
+                            <span class="block text-xl font-bold">250</span>
+                        </button>
+                        <button data-value="500"
+                            class="option-card bg-slate-800 p-3 rounded-lg border-2 border-slate-700 text-center">
+                            <span class="block text-xl font-bold">500</span>
+                        </button>
+                        <button data-value="1000"
+                            class="option-card bg-slate-800 p-3 rounded-lg border-2 border-slate-700 text-center">
+                            <span class="block text-xl font-bold">1000</span>
+                        </button>
+                        <button data-value="1500"
+                            class="option-card bg-slate-800 p-3 rounded-lg border-2 border-slate-700 text-center">
+                            <span class="block text-xl font-bold">1500</span>
+                        </button>
+                        <button data-value="2000"
+                            class="option-card bg-slate-800 p-3 rounded-lg border-2 border-slate-700 text-center">
+                            <span class="block text-xl font-bold">2000</span>
+                        </button>
+                        <button data-value="2500"
+                            class="option-card bg-slate-800 p-3 rounded-lg border-2 border-slate-700 text-center">
+                            <span class="block text-xl font-bold">2500</span>
+                        </button>
+                        <button data-value="5000"
+                            class="option-card bg-slate-800 p-3 rounded-lg border-2 border-slate-700 text-center">
+                            <span class="block text-xl font-bold">5000</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 2. Paper Type -->
+                <div>
+                    <h2 class="text-2xl font-semibold text-sky-300 mb-4">2. Select Paper Type</h2>
+                    <div id="paper-options" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <button data-value="standard"
+                            class="option-card bg-slate-800 p-4 rounded-lg border-2 border-slate-700 text-left selected">
+                            <h3 class="font-bold text-lg">Standard (14-pt)</h3>
+                            <p class="text-sm text-slate-400">Classic and professional. Ideal to start.</p>
+                        </button>
+                        <button data-value="premium"
+                            class="option-card bg-slate-800 p-4 rounded-lg border-2 border-slate-700 text-left">
+                            <h3 class="font-bold text-lg">Premium (16-pt)</h3>
+                            <p class="text-sm text-slate-400">Thicker and more durable, for a better impression.</p>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 3. Finish & Extras -->
+                <div>
+                    <h2 class="text-2xl font-semibold text-sky-300 mb-4">3. Finish & Extras</h2>
+                    <div class="space-y-4">
+                        <div
+                            class="flex items-center justify-between bg-slate-800 p-4 rounded-lg border border-slate-700">
+                            <div>
+                                <h3 class="font-semibold">Rounded Corners</h3>
+                                <p class="text-sm text-slate-400">A modern and memorable look.</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" id="corners-rounded">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Columna de Resumen y Precio -->
+            <div class="lg:col-span-1">
+                <div class="bg-slate-800/70 backdrop-blur-md p-6 rounded-xl border border-slate-700 sticky top-10">
+                    <h2 class="text-2xl font-semibold text-center mb-4">Order Summary</h2>
+
+                    <div id="summary-list" class="space-y-3 text-slate-300 mb-6 border-b border-slate-700 pb-4 text-lg">
+                        <!-- El resumen se generará aquí con JavaScript -->
+                    </div>
+
+                    <div class="text-center">
+                        <p class="text-slate-400 text-lg">Estimated Price</p>
+                        <p id="total-price"
+                            class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-300 my-2">
+                            $0.00
+                        </p>
+                        <p class="text-xs text-slate-500">Prices include design and shipping.</p>
+                    </div>
+
+                    <a href="mailto:info@inzings.io?subject=Business%20Card%20Order"
+                        class="mt-6 w-full block text-center bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-4 rounded-lg transition-transform hover:scale-105">
+                        Contact to Start Order
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+
     <section id="blog" class="container mx-auto px-4 py-12">
         <h3 class="text-2xl sm:text-3xl font-bold text-center text-sky-300 mb-10">Latest Blog Posts</h3>
         <div class="blog-slider">
